@@ -53,11 +53,11 @@ $record_table = "";
 
 
 // Need to parse and format telephone numbers $row['ophone'] $row['rphone']
-// Bob wants it to be dipalyed (xxx) xxx-xxxx (I will add a country code as +xx if applicable
-// but Bob doesn't want one for US numbers at least)
+// Manager wants it to be dipalyed (xxx) xxx-xxxx (I will add a country code as +xx if applicable
+// but Manager doesn't want one for US numbers at least)
 // The Regex accepts almost any variety of 10 digits along with country codes
 // I would rather parse it than force them to waste time re-entering
-// and Bob was ok with them entering it however, as long as it displays properly
+// and Manager was ok with them entering it however, as long as it displays properly
 
 $ophone_output = processPhoneNumber($row['ophone']);
 $rphone_output = processPhoneNumber($row['rphone']);
@@ -91,7 +91,7 @@ $record_table .= "<input type='hidden' id='selected_id' name='selected_id' value
 $record_table .= "<tr><th class='details_header1'>Sample ID</th><td class='details_cell1'>".$row[0]."</td></tr>";
 $record_table .= "<tr><th>Submitted</th><td>"
     // $row['tscreated'] uses YYYY-MM-DD HH:MM:SS
-    // Bob wants it to be displayed MM/DD/YY slashes are important
+    // Manager wants it to be displayed MM/DD/YY slashes are important
     .substr($row['tscreated'], 5, 2)."/".substr($row['tscreated'], 8, 2)."/".substr($row['tscreated'], 2, 2)
     ."</td></tr>";
 $record_table .= "<tr><th>Trader</th><td>".$row['trader']."</td></tr>";
@@ -116,7 +116,7 @@ if ( $row['sorigin'] == null || $row['sorigin'] == ""
     }
 }
 $record_table .= "<tr><th>Recipient</th><td>".$row['srecipient']."</td></tr>";
-// make a seperate table so Bob can have it all on one page with my grid layout
+// make a seperate table so Manager can have it all on one page with my grid layout
 $record_table .= "</table>";
 $record_table .= "<table id='details_table2' class='details_table'>";
 // sample recipient section
@@ -135,7 +135,7 @@ if ($row['srecipient'] == null || $row['srecipient'] == ""
     $record_table .= "<tr><th>Arrive by</th><td>".($row['set_arrival'] ? "Yes" : "No")."</td></tr>";
     $record_table .= ($row['set_arrival'] ? ("<tr><th>Arrive by</th><td>"
       // $row['rdate'] uses YYYY-MM-DD
-      // Bob wants it to be displayed MM/DD/YY slashes are important
+      // Manager wants it to be displayed MM/DD/YY slashes are important
       .substr($row['rdate'], 5, 2)."/".substr($row['rdate'], 8, 2)."/".substr($row['rdate'], 2, 2)
       ."</td></tr>") : "");
     $record_table .= "<tr><th>Description</th><td>".$row['rdescription']."</td></tr>";
