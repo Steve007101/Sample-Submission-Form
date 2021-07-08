@@ -19,16 +19,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `intercotrading_sl_forms`
+-- Database: `sl_forms`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sl_old_denise_lab`
+-- Table structure for table `sl_old_record_lab`
 --
 
-CREATE TABLE `sl_old_denise_lab` (
+CREATE TABLE `sl_old_record_lab` (
   `id` int(8) UNSIGNED ZEROFILL NOT NULL,
   `tscreated` timestamp(6) NULL DEFAULT NULL,
   `rdescription` varchar(400) DEFAULT NULL,
@@ -47,10 +47,10 @@ CREATE TABLE `sl_old_denise_lab` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sl_old_denise_to_customer`
+-- Table structure for table `sl_old_record_to_customer`
 --
 
-CREATE TABLE `sl_old_denise_to_customer` (
+CREATE TABLE `sl_old_record_to_customer` (
   `id` int(8) UNSIGNED ZEROFILL NOT NULL,
   `tscreated` timestamp NULL DEFAULT NULL,
   `rdescription` varchar(117) DEFAULT NULL,
@@ -215,7 +215,7 @@ CREATE TABLE `sl_sample_submission_form` (
   `trader` varchar(32) DEFAULT NULL,
   `trader_email` varchar(64) DEFAULT NULL,
   `stype` set('Samples To Be Mailed','Lab Testing Information','Special Lab Testing Information','') DEFAULT NULL,
-  `sorigin` set('Supplier','ITC Warehouse','Customer','') DEFAULT NULL,
+  `sorigin` set('Supplier','Warehouse','Customer','') DEFAULT NULL,
   `srecipient` set('Lab','Customer','Supplier','St Louis Testing (Lab)','UMSL Labs') DEFAULT NULL,
   `hazardous` tinyint(1) DEFAULT NULL,
   `flammable` tinyint(1) DEFAULT NULL,
@@ -227,15 +227,15 @@ CREATE TABLE `sl_sample_submission_form` (
 --
 
 --
--- Indexes for table `sl_old_denise_lab`
+-- Indexes for table `sl_old_record_lab`
 --
-ALTER TABLE `sl_old_denise_lab`
+ALTER TABLE `sl_old_record_lab`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sl_old_denise_to_customer`
+-- Indexes for table `sl_old_record_to_customer`
 --
-ALTER TABLE `sl_old_denise_to_customer`
+ALTER TABLE `sl_old_record_to_customer`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -285,15 +285,15 @@ ALTER TABLE `sl_sample_submission_form`
 --
 
 --
--- AUTO_INCREMENT for table `sl_old_denise_lab`
+-- AUTO_INCREMENT for table `sl_old_record_lab`
 --
-ALTER TABLE `sl_old_denise_lab`
+ALTER TABLE `sl_old_record_lab`
   MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `sl_old_denise_to_customer`
+-- AUTO_INCREMENT for table `sl_old_record_to_customer`
 --
-ALTER TABLE `sl_old_denise_to_customer`
+ALTER TABLE `sl_old_record_to_customer`
   MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
